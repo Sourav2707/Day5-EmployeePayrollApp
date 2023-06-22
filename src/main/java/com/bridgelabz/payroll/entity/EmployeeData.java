@@ -1,6 +1,7 @@
 package com.bridgelabz.payroll.entity;
 
 
+import com.bridgelabz.payroll.dto.EmployeeDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +10,7 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-public class Employee {
+public class EmployeeData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,10 +21,10 @@ public class Employee {
     private LocalDate startDate;
     private String notes;
 
-    public Employee() {
+    public EmployeeData(EmployeeDTO employeeDTO) {
     }
 
-    public Employee(Long id, String name, String profilePic, String gender, String salary, LocalDate startDate, String notes) {
+    public EmployeeData(Long id, String name, String profilePic, String gender, String salary, LocalDate startDate, String notes) {
         this.id = id;
         this.name = name;
         this.profilePic = profilePic;
